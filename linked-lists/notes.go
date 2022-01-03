@@ -16,5 +16,5 @@ This is the edge a linked list has over an array. An array has to shift.
 Singly linked lists contain the value and the pointer to the next value
 
 Doubly linked list contain the value, the pointer to the next value and the pointer to the
-previous value
+previous value. Adding an element to the end of this is easier than in a SLL.
 */
