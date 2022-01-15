@@ -32,4 +32,7 @@ Heapify is also needed after taking an item off the heap
 WHen the root is removed, the last node is inserted in the root and then the swapping process begins from the top
 
 Time complexity for inserting and extracting in a heap is O(logn)
+
+The left child is always an odd number and the right child is always an even numberand they are both going to indicate
+te same parent index
 */
