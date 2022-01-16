@@ -39,19 +39,31 @@ func (h *HashTable) Insert(key string) {
 }
 
 // Search will take in a key and return true if the key is stored in the hash table
+func (h *HashTable) Search(key string) bool {
+	index := hash(key)
+	return h.array[index].search(key)
+}
 
 // Delete will take in a key and delete it from the hash table
+func (h *HashTable) Delete(key string) {
+	index := hash(key)
+	h.array[index].delete(key)
+}
 
 // BUCKET
 // ========================
-// insert
+// insert will take a key, create a node with the key and insert the node in the bucket
 func (b *bucket) insert(k string) {
-	newNode := &bucketNode{key: k}
-	newNode.next = b.head
-	b.head = newNode
+	if !b.search(k) {
+		newNode := &bucketNode{key: k}
+		newNode.next = b.head
+		b.head = newNode
+	} else {
+		fmt.Println(k, "already exists")
+	}
 }
 
-// search
+// search will take in a key and return true if the bucket has the key stored in it
 func (b *bucket) search(k string) bool {
 	currentNode := b.head
 	for currentNode != nil {
@@ -63,7 +75,22 @@ func (b *bucket) search(k string) bool {
 	return false
 }
 
-// delete
+// delete will take in a key and delete the node from the bucket
+func (b *bucket) delete(k string) {
+	if b.head.key == k {
+		b.head = b.head.next
+		return
+	}
+
+	previousNode := b.head
+	for previousNode.next != nil {
+		if previousNode.next.key == k {
+			// delete the node
+			previousNode.next = previousNode.next.next
+		}
+		previousNode = previousNode.next
+	}
+}
 
 // hash
 func hash(key string) int {
@@ -75,11 +102,22 @@ func hash(key string) int {
 }
 
 func main() {
-	testHashTable := Init()
-	fmt.Println(testHashTable)
+	hashTable := Init()
+	list := []string{
+		"ERIC",
+		"KENNY",
+		"KYLE",
+		"STAN",
+		"RANDY",
+		"BUTTERS",
+		"TOKEN",
+	}
 
-	testBucket := &bucket{}
-	testBucket.insert("RANDY")
-	fmt.Println(testBucket.search("RANDY"))
-	fmt.Println(testBucket.search("ERIC"))
+	for _, v := range list {
+		hashTable.Insert(v)
+	}
+
+	hashTable.Delete("STAN")
+	fmt.Println(hashTable.Search("STAN"))
+	fmt.Println(hashTable.Search("KENNY"))
 }
