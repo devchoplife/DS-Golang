@@ -1,4 +1,4 @@
-package heaps
+package main
 
 /*
 Heaps are especially good for implementing priority queues

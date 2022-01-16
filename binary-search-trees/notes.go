@@ -1,4 +1,4 @@
-package binarysearchtrees
+package main
 
 /*
 Binary tree is a tree that has nodes with not more than two children

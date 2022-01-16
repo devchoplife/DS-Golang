@@ -1,4 +1,4 @@
-package hashtables
+package main
 
 /*
 One of the most basic data structures and it is commonly asked in interviews

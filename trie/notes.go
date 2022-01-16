@@ -1,4 +1,4 @@
-package trie
+package main
 
 /*
 A trie is a tree structure which is mostly used for storing words

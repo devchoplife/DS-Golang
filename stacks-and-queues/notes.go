@@ -1,4 +1,4 @@
-package stacksandqueues
+package main
 
 /*
 Stacks and Queues are linear data structures
