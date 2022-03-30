@@ -13,6 +13,6 @@ Also, the node needs to have a boolean value indicating if the node is the end o
 
 Time Complexity is O(m) where m is the length of the word being searched
 
-A trie can take a lot of space because the trie gets larger as we ad more words
+A trie can take a lot of space because the trie gets larger as we add more words
 This is why tries are known to have a trade-off between time and space
 */
