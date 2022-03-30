@@ -5,7 +5,7 @@ One of the most basic data structures and it is commonly asked in interviews
 
 e.g. Design a hashmap without using any builtin library
 
-Data is stored in a has table ins a way that the data is passed through a hash function and a has code is generated
+Data is stored in a has table ins a way that the data is passed through a hash function and a hash code is generated
 The data is stored along with the hash code so when you want to search for the string, it simply looks for the has code
 and returns the strin.
 
