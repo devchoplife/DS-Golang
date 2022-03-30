@@ -84,7 +84,7 @@ func left(i int) int {
 
 // Get the right child index
 func right(i int) int {
-	return (2 * i) + 1
+	return (2 * i) + 2
 }
 
 // swap keys in the array
